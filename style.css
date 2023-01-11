@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Toto:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&family=Noto+Serif+Toto:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap');
+
 
 :root {
     --midnight-green-eagle-green: #174C50ff;
     --cultured: #E9EFF0ff;
-    --orange-peel: #FEA42Fff;
+    --orange-peel: rgb(229, 139, 21);
     --medium-aquamarine: #06E8B0ff;
     --magenta-crayola: #FB49B7ff;
 }
@@ -36,19 +38,44 @@ h3 {
     padding-left: 3px;
 }
 
-main {
-    background-color: #06E8B0ff;
+
+
+.form {
+    background-color: var(--cultured);
+    background-color: var(--medium-aquamarine);
+    display: grid;
+    gap: 15px;
     color: #174C50ff;
     font-weight: bold;
 }
 
+
 .qGroup {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 10px;
 }
 
+.question {
+    width: 110px;
+}
+
 .option {
-    background-color: rgba(23, 76, 80, .25);
+    border-radius: 3px;
     padding: 5px;
+}
+
+.active {
+    background-color: var(--cultured);
+}
+
+.submit {
+    background-color: var(--orange-peel);
+    color: var(--cultured);
+    font-weight: bold;
+    font-family: 'Heebo', sans-serif;
+    border-radius: 20px;
+    text-align: center;
+    width: 100px;
 }
