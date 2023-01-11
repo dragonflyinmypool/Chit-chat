@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Toto:wght@600&display=swap');
+
+:root {
+    --midnight-green-eagle-green: #174C50ff;
+    --cultured: #E9EFF0ff;
+    --orange-peel: #FEA42Fff;
+    --medium-aquamarine: #06E8B0ff;
+    --magenta-crayola: #FB49B7ff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--midnight-green-eagle-green);
+    padding: 10px;
+}
+
+.bubleBox {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+header {
+    background-color: #FB49B7ff;
+    color: var(--cultured);
+    font-family: 'Noto Serif Toto', serif;
+}
+
+h3 {
+    font-size: 15px;
+    padding-left: 3px;
+}
+
+main {
+    background-color: #06E8B0ff;
+    color: #174C50ff;
+    font-weight: bold;
+}
+
+.qGroup {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.option {
+    background-color: rgba(23, 76, 80, .25);
+    padding: 5px;
+}
