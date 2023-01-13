@@ -32,7 +32,6 @@ function getFromData() {
   return data;
 }
 
-// create prompt
 function createPrompt(data) {
   let prompt = `I am a ${data.from} and want to start a ${data.tone} and engaging conversation with a ${data.to} that I see in a ${data.location}. She/he speaks ${data.language} and is around ${data.age} years old. Please come up with three short and catchy conversation starters ( i will pick the one I like best). Return as json {
   "choices": [converstation starter1, conversation starter2, conversation starter3]
@@ -42,17 +41,13 @@ function createPrompt(data) {
 
 function sendtoAPI(prompt, apiKey) {
   console.log(apiKey);
-  fetch('https://api.openai.com/v1/completions', {
+  fetch('http://localhost:3000/', {
     method: 'POST',
     headers: {
-      Authorization: 'Bearer ' + apiKey,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'text-davinci-003',
       prompt: prompt,
-      max_tokens: 300,
-      temperature: 1,
     }),
   })
     .then((data) => {
@@ -67,7 +62,7 @@ function sendtoAPI(prompt, apiKey) {
 }
 
 function displayData(data) {
-  let output = data.choices[0].text;
+  let output = data.response;
   // text to json
   let json = JSON.parse(output).choices;
   console.log(json);

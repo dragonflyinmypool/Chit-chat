@@ -3,6 +3,14 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const axios = require('axios');
+const cors = require('cors');
+const corsOptions = {
+  origin: '*',
+  credentials: true, //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions)); // Use this after the variable declaration
 
 const apiKey = process.env.apiKey;
 
@@ -26,7 +34,11 @@ async function sendtoAPI(requestBody, apiKey) {
     console.log('request sent');
 
     const realResponse = response.data.choices[0].text;
-    return realResponse;
+    const responseObject = {
+      response: realResponse,
+    };
+
+    return responseObject;
   } catch (error) {
     return error;
   }
@@ -35,7 +47,7 @@ async function sendtoAPI(requestBody, apiKey) {
 app.use(express.json());
 
 app.post('/', async (req, res) => {
-  const requestBody = req.body.message;
+  const requestBody = req.body.prompt;
   const realResponse = await sendtoAPI(requestBody, apiKey);
   res.send(realResponse);
 });
