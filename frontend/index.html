@@ -14,9 +14,10 @@
 		options: ['Flirt', 'Business', 'Casual'], -->
         <label for="tone">Tone</label>
         <select name="tone" id="tone">
-            <option value="flirt">Flirt</option>
-            <option value="business">Business</option>
+            <option value="flirt and causal">Flirt</option>
+            <option value="very flirty">Very flirty</option>
             <option value="casual">Casual</option>
+            <option value="business">Business</option>
         </select>
         <!-- question: 'From',
 		options: ['Man', 'Woman'], -->
@@ -29,8 +30,8 @@
 		options: ['Man', 'Woman'], -->
         <label for="To">To</label>
         <select name="To" id="To">
-            <option value="Woman">Woman</option>
             <option value="Man">Man</option>
+            <option value="Woman" selected="selected">Woman</option>
         </select>
         <!-- {
 		question: 'Location',
@@ -65,7 +66,7 @@
         <label for="Age">Person's age</label>
         <select name="Age" id="Age">
             <option value="15-18">15-18</option>
-            <option value="19-25">19-25</option>
+            <option value="19-25" selected="selected">19-25</option>
             <option value="25-35">25-35</option>
             <option value="35-45">35-45</option>
             <option value="45-55">45-55</option>
@@ -79,10 +80,10 @@
         </div>
     </div>
 
-    <div class="results" id="r1"></div>
-    <div class="results" id="r2"></div>
-    <div class="results" id="r3"></div>
-
+    <div class="results" id="r1">Convo starter 1</div>
+    <div class="results" id="r2">Convo starter 2</div>
+    <div class="results" id="r3">Convo starter 3</div>
+    <script src="config.js"> </script>
     <script src="script.js"></script>
 
 </body>

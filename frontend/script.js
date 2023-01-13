@@ -1,7 +1,7 @@
 const btn = document.querySelector('#submit');
 btn.addEventListener('click', submit);
 
-const apiKey = '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';
+var apiKey = config.apiKey;
 
 function submit(e) {
   console.log('submit');
@@ -32,7 +32,9 @@ function getFromData() {
   return data;
 }
 function createPrompt(data) {
-  let prompt = `I am a ${data.from} and want to start a ${data.tone} and engaging conversation with a ${data.to} that I see in a ${data.location}. She/he speaks ${data.language} and is around ${data.age} years old. Please come up with three short and catchy conversation starters ( i will pick the one I like best):`;
+  let prompt = `I am a ${data.from} and want to start a ${data.tone} and engaging conversation with a ${data.to} that I see in a ${data.location}. She/he speaks ${data.language} and is around ${data.age} years old. Please come up with three short and catchy conversation starters ( i will pick the one I like best). Return as json {
+  "choices": [converstation starter1, conversation starter2, conversation starter3]
+  } return:`;
   return prompt;
 }
 
@@ -55,12 +57,20 @@ function sendtoAPI(prompt, apiKey) {
       return data.json();
     })
     .then((data) => {
-      console.log(data);
-      let output = data.choices[0].text;
-      console.log(output);
-      document.getElementById('results').innerHTML = output;
+      displayData(data);
     })
     .catch((error) => {
       console.log(error);
     });
+}
+
+function displayData(data) {
+  let output = data.choices[0].text;
+  // text to json
+  let json = JSON.parse(output).choices;
+  console.log(json);
+
+  document.getElementById('r1').innerHTML = json[0];
+  document.getElementById('r2').innerHTML = json[1];
+  document.getElementById('r3').innerHTML = json[2];
 }
