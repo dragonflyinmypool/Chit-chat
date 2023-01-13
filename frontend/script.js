@@ -31,6 +31,8 @@ function getFromData() {
   };
   return data;
 }
+
+// create prompt
 function createPrompt(data) {
   let prompt = `I am a ${data.from} and want to start a ${data.tone} and engaging conversation with a ${data.to} that I see in a ${data.location}. She/he speaks ${data.language} and is around ${data.age} years old. Please come up with three short and catchy conversation starters ( i will pick the one I like best). Return as json {
   "choices": [converstation starter1, conversation starter2, conversation starter3]
