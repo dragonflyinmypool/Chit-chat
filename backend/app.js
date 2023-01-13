@@ -1,13 +1,45 @@
-let express = require('express');
-let bodyParser = require('body-parser');
-let routes = require('./routes/routes.js');
-var app = express();
+require('dotenv').config();
+const express = require('express');
+const app = express();
+const port = 3000;
+const axios = require('axios');
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+const apiKey = process.env.apiKey;
 
-routes(app);
+async function sendtoAPI(requestBody, apiKey) {
+  try {
+    console.log('request: ' + requestBody);
+    const response = await axios({
+      method: 'post',
+      url: 'https://api.openai.com/v1/completions',
+      headers: {
+        Authorization: 'Bearer ' + apiKey,
+        'Content-Type': 'application/json',
+      },
+      data: {
+        model: 'text-davinci-003',
+        prompt: requestBody,
+        max_tokens: 500,
+        temperature: 1,
+      },
+    });
+    console.log('request sent');
 
-let server = app.listen(3000, function () {
-  console.log('app running on port.', server.address().port);
+    const realResponse = response.data.choices[0].text;
+    return realResponse;
+  } catch (error) {
+    return error;
+  }
+}
+
+app.use(express.json());
+
+app.post('/', async (req, res) => {
+  const requestBody = req.body.message;
+  const realResponse = await sendtoAPI(requestBody, apiKey);
+  res.send(realResponse);
+});
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`);
 });
