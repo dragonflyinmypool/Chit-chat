@@ -9,7 +9,7 @@
 
 <body>
     <h1>Chit-Chat</h1>
-    <form id="form">
+    <div id="form">
         <!-- question: 'Tone',
 		options: ['Flirt', 'Business', 'Casual'], -->
         <label for="tone">Tone</label>
@@ -27,10 +27,10 @@
         </select>
         <!-- question: 'To',
 		options: ['Man', 'Woman'], -->
-        <label for="To">From</label>
+        <label for="To">To</label>
         <select name="To" id="To">
-            <option value="flirt">Man</option>
-            <option value="business">Woman</option>
+            <option value="Woman">Woman</option>
+            <option value="Man">Man</option>
         </select>
         <!-- {
 		question: 'Location',
@@ -39,13 +39,13 @@
 	}, -->
         <label for="Location">Location</label>
         <select name="Location" id="Location">
-            <option value="flirt">Resturant</option>
-            <option value="business">Club</option>
-            <option value="casual">Bar</option>
-            <option value="flirt">Office</option>
-            <option value="business">Street</option>
-            <option value="casual">Plane</option>
-            <option value="casual">Other</option>
+            <option value="Resturant">Resturant</option>
+            <option value="Club">Club</option>
+            <option value="Bar">Bar</option>
+            <option value="Office">Office</option>
+            <option value="Street">Street</option>
+            <option value="Plane">Plane</option>
+            <option value="Other">Other</option>
         </select>
 
         <!-- question: 'Language',
@@ -53,37 +53,36 @@
 
         <label for="Language">Language</label>
         <select name="Language" id="Language">
-            <option value="flirt">English</option>
-            <option value="business">Spanish</option>
-            <option value="casual">French</option>
-            <option value="flirt">Arabic</option>
-            <option value="business">German</option>
-            <option value="casual">Other</option>
+            <option value="English">English</option>
+            <option value="Spanish">Spanish</option>
+            <option value="French">French</option>
+            <option value="Arabic">Arabic</option>
+            <option value="German">German</option>
+            <option value="Other">Other</option>
         </select>
         <!-- question: 'Age',
 		options: ['15-18 ','19-25', '25-35', '35-45', '45-55', '55-65', '65-75', '75+'], -->
-        <label for="Age">Age</label>
+        <label for="Age">Person's age</label>
         <select name="Age" id="Age">
-            <option value="flirt">15-18</option>
-            <option value="flirt">19-25</option>
-            <option value="business">25-35</option>
-            <option value="casual">35-45</option>
-            <option value="flirt">45-55</option>
-            <option value="business">55-65</option>
-            <option value="casual">65-75</option>
-            <option value="casual">75+</option>
+            <option value="15-18">15-18</option>
+            <option value="19-25">19-25</option>
+            <option value="25-35">25-35</option>
+            <option value="35-45">35-45</option>
+            <option value="45-55">45-55</option>
+            <option value="55-65">55-65</option>
+            <option value="65-75">65-75</option>
+            <option value="75+">75+</option>
         </select>
         <!-- submit -->
         <div class="submitContainer">
-            <input type="submit" value="Submit" class="submit" />
+            <button id="submit">Submit</button>
         </div>
-    </form>
-
-    <div class="results">
-        Suuuuch a good explanation of the philosophy behind how stores are done, particularly around the vanilla
-        implementation
-        and the shared pattern of the unsubscribe and unmount. Thank you! 🙏
     </div>
+
+    <div class="results" id="r1"></div>
+    <div class="results" id="r2"></div>
+    <div class="results" id="r3"></div>
+
     <script src="script.js"></script>
 
 </body>
