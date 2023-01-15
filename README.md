@@ -5,8 +5,8 @@ An app to help you strike a conversation with anyone!
 2. Hit submit
 3. Wait a few seconds, and check out 3 converstation ideas.
 
- [Try it](https://chit-chat-convo.netlify.app/)
- 
+ ## [Try it](https://chit-chat-convo.netlify.app/)
+ ---
  
 # How it works
 1. Form sends text details to node server
