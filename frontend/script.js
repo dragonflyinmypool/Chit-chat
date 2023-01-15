@@ -41,7 +41,7 @@ function createPrompt(data) {
 
 function sendtoAPI(prompt, apiKey) {
   console.log(apiKey);
-  fetch('http://localhost:3000/', {
+  fetch('https://chit-chat-production.up.railway.app/', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
