@@ -1,15 +1,13 @@
 const btn = document.querySelector('#submit');
 btn.addEventListener('click', submit);
 
-var apiKey = config.apiKey;
-
 function submit(e) {
   console.log('submit');
   let data = getFromData();
   console.log(data);
   let prompt = createPrompt(data);
   console.log(prompt);
-  sendtoAPI(prompt, apiKey);
+  sendtoAPI(prompt);
 }
 
 function getFromData() {
@@ -39,8 +37,8 @@ function createPrompt(data) {
   return prompt;
 }
 
-function sendtoAPI(prompt, apiKey) {
-  console.log(apiKey);
+function sendtoAPI(prompt) {
+  console.log('Request sent to API');
   fetch('https://chit-chat-production.up.railway.app/', {
     method: 'POST',
     headers: {
