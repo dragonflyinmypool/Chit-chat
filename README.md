@@ -1,4 +1,4 @@
-#CHIT CHAT (Beta)
+# CHIT CHAT (Beta)
 An app to help you strike a conversation with anyone!
 
 1. Enter the detail of the person you want to talk to and the location you are in. 
