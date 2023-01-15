@@ -1,7 +1,7 @@
 # CHIT CHAT (Beta)
 An app to help you strike a conversation with anyone!
 
-1. Enter the detail of the person you want to talk to and the location you are in. 
+1. Enter the details of the person you want to talk to and the location you are in. 
 2. Hit submit
 3. Wait a few seconds, and check out 3 converstation ideas.
 
